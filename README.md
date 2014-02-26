@@ -1,4 +1,5 @@
-cf-schwag-store
-===============
+#CF Schwag Store
 
-Code Fellows store, selling the inventory of branded swag.
+A store-front app built on [Shoppe](http://tryshoppe.com/) (a Rails engine) that sells the inventory of Code Fellows swag.
+
+You can purchase t-shirts, hoodies, hats, pins, stickers, pens, and posters.
