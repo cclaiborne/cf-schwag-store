@@ -1,8 +1,10 @@
 language: ruby
 rvm:
-  - 2.1.0
+- 2.1.0
 deploy:
   provider: heroku
-  app: cf-schwag-store
   api_key:
-    secure: asdfasdfasdfasdfasdfasdfasdfasdf
+    secure: Cohb/LGjTDMxQjnT60ENH1RFINuuizZYYnDUybhTclJet0u3vCdZkZ9zaD65I1PPm/zRzdE4VHWsapk/sGw2Cnl7AWji//5kCMtJavs9PLFl/56CzhtzzTL7MuV7j1UbWKEG7XKJ9s66RxgJxXqLj6RtdKpiFzvb73wo0eZySe8=
+  app: cf-schwag-store
+  on:
+    repo: sealocal/cf-schwag-store
