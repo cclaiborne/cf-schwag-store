@@ -49,68 +49,23 @@
             </div>
             <!-- End Side Bar -->
 
-
             <%= yield %>
 
-
             <!-- Managed By -->
-              <div class="row">
-                <div class="large-12 columns">
-                  <div class="panel">
-                    <div class="row">
-
-                    <div class="large-2 small-6 columns">
-                      <img src="http://placehold.it/300x300&text=Site Owner">
-                    </div>
-
-                    <div class="large-10 small-6 columns">
-                      <strong>
-                        <p>Site created by:</p>
-                      </strong>
-                        <hr/>
-                      <p>Chris C., Jerry T., and Mike T.</p>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
+            <%= render 'layouts/site_managers' %>
             <!-- End Managed By -->
           </div>
         </div>
 
-
-    <!-- Footer -->
-      <footer class="row">
-        <div class="large-12 columns"><hr />
-          <div class="row">
-
-            <div class="large-6 columns">
-              <p>
-                &copy; 2014 Chris C., Jerry T., and Mike T.
-              </p>
-            </div>
-
-            <!--
-            <div class="large-6 columns">
-              <ul class="inline-list right">
-                <li><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
-                <li><a href="#">Link 4</a></li>
-              </ul>
-            </div>
-              -->
-
-          </div>
-        </div>
-      </footer>
-    <!-- End Footer -->
+      <%= render 'layouts/footer' %>
 
     </div>
   </div>
     <script src="../../assets/js/marketing.js"></script>
     <script>
       $(document).foundation();
+      var doc = document.documentElement;
+      doc.setAttribute('data-useragent', navigator.userAgent);
     </script>
     <%= javascript_include_tag "application" %>
   </body>
