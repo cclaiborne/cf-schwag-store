@@ -33,6 +33,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger', github: 'nixme/pry-debugger'
   gem 'pry-rescue'
+  gem 'mocha'
 end
 
 group :production do
