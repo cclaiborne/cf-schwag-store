@@ -9,6 +9,7 @@ require "minitest/rails/capybara"
 require "capybara-webkit"
 require 'capybara/dsl'
 require 'mocha'
+require 'miniskirt'
 require 'factories'
 require "turn/autorun"
 
