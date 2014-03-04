@@ -63,8 +63,8 @@ $em-base: 16px !default;
 
 $default-float: left;
 
-// $body-bg: #fff;
-$body-font-color: #fff;
+//$body-bg: #000;
+$body-font-color: #000;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
@@ -80,7 +80,7 @@ $body-font-color: #fff;
 // Colors
 
 $primary-color: #c2281e;
-$secondary-color: #fff;
+$secondary-color: white;
 // $alert-color: #c60f13;
 // $success-color: #5da423;
 
@@ -204,7 +204,6 @@ $secondary-color: #fff;
 // $small-font-color: lighten($header-font-color, 30%);
 
 // Style paragraphs
-
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: normal;
 // $paragraph-font-size: 1em;
