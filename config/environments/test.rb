@@ -33,4 +33,7 @@ CfSchwagStore::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+  config.generators do |g|
+    g.test_framework :mini_test, :spec => true, :fixture => false
+  end 
 end
