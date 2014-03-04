@@ -26,4 +26,7 @@ CfSchwagStore::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  config.generators do |g|
+    g.test_framework :mini_test, :spec => true, :fixture => false
+  end 
 end
