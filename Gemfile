@@ -16,17 +16,16 @@ gem 'jbuilder', '~> 1.2'
 gem 'minitest-rails'
 gem 'factory_girl_rails'
 
+
 group :test do
   gem "minitest-rails-capybara"
   gem 'capybara-webkit'
-  gem 'miniskirt'
   gem 'turn'
   gem 'simplecov', :require => false
 end
   # gem 'debugger', "1.6.5"
 
 group :development, :test do
-  gem 'awesome_print'
   gem 'sqlite3'
   gem 'binding_of_caller', github: "banister/binding_of_caller" # This needs to go in before better_errors
   gem 'better_errors'
@@ -34,6 +33,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger', github: 'nixme/pry-debugger'
   gem 'pry-rescue'
+  gem 'miniskirt'
   gem 'mocha'
 end
 
@@ -47,7 +47,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
