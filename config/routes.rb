@@ -1,7 +1,12 @@
 CfSchwagStore::Application.routes.draw do
+
+  #customer-facing products routes
+  get 'products' => 'products#index'
+  get 'product/:permalink' => 'products#show', :as => 'product'
+
   get "welcome/index"
   mount Shoppe::Engine => "/shoppe"
-  root 'welcome#index'
+  root 'products#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

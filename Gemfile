@@ -26,6 +26,7 @@ end
   # gem 'debugger', "1.6.5"
 
 group :development, :test do
+  gem 'awesome_print'
   gem 'sqlite3'
   gem 'binding_of_caller', github: "banister/binding_of_caller" # This needs to go in before better_errors
   gem 'better_errors'
@@ -46,6 +47,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
