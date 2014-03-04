@@ -2,255 +2,81 @@
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-  <head>
-  	<meta charset="utf-8" />
-
-  	<!-- Uncomment to make IE8 render like IE7 -->
-  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
-
-  	<!-- Set the viewport width to device width for mobile -->
-  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
-
-  <body>
-     <div class="off-canvas-wrap">
-      <div class="inner-wrap">
-
-
-        <nav class="tab-bar show-for-small">
-  <a class="off-canvas-left-toggle menu-icon ">
-    <span></span>
-  </a>
-</nav>
-
-
-<nav class="top-bar hide-for-small">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="../../index.html">Foundation</a></h1>
-    </li>
-  </ul>
-
-  <section class="top-bar-section">
-    <ul class="right">
-      <li class="has-dropdown">
-        <a href="#" class="">Learn</a>
-        <ul class="dropdown">
-          <li><a href="../../learn/getting-started.html">Getting Started</a></li>
-          <li><a href="../../learn/features.html">Features</a></li>
-          <li><a href="../../learn/faq.html">FAQ</a></li>
-          <li><a href="../../learn/case-jacquelinewest.html">Case Studies</a></li>
-          <li><a href="../../learn/website-examples.html">Website Examples</a></li>
-          <li><a href="../../learn/video-started-with-foundation.html">Videos</a></li>
-          <li><a href="../../learn/training.html">Training</a></li>
-          <li><a href="../../learn/about.html">About</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="#" class="">Develop</a>
-        <ul class="dropdown">
-          <li><a href="../addons-templates.html">Add-ons</a></li>
-          <li><a href="#">Docs</a></li>
-          <li><a href="../download.html">Download</a></li>
-          <li><a href="../contribute.html">Contribute</a></li>
-          <li><a href="../tools.html">Tools</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="#" class="">Support</a>
-        <ul class="dropdown">
-          <li><a href="../../../../../../../forum">Forum</a></li>
-          <li><a href="../../support/support.html">Email Support</a></li>
-          <li><a href="../../support/support.html">Twitter</a></li>
-          <li><a href="../../support/support.html">GitHub Issues</a></li>
-          <li><a href="../../support/support.html">StackOverflow</a></li>
-          <li><a href="../../support/images-and-badges.html">Images &amp; Badges</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <a href="#" class="">Business</a>
-        <ul class="dropdown">
-          <li><a href="../../business/services.html">Services</a></li>
-          <li><a href="../../business/consulting.html">Consulting</a></li>
-          <li><a href="../../business/corporate-training.html">Corporate Training</a></li>
-          <li><a href="../../business/corporate-support.html">Corporate Support</a></li>
-          <li><a href="../../business/prototype-hosting.html">Prototype Hosting</a></li>
-        </ul>
-      </li>
-      <li class="">
-        <a href="/docs" class="">Docs</a>
-      </li>
-      <li class="">
-        <a href="../../getting-started.html" class="small button">Getting Started</a>
-      </li>
-    </ul>
-  </section>
-</nav>
-
-        <!DOCTYPE html>
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
+	<meta charset="utf-8" />
+	<!-- Uncomment to make IE8 render like IE7 -->
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
+	<title><%= content_for?(:title) ? yield(:title) : "Code Fellows Store" %></title>
 
-  <title>Welcome to Foundation | Store</title>
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/foundation.css">
-
-  <script src="js/vendor/custom.modernizr.js"></script>
-
+	<%= stylesheet_link_tag    "application" %>
+	<%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="row">
-    <div class="large-12 columns">
 
-    <!-- Navigation -->
+<body>
+  <div class="off-canvas-wrap">
+    <div class="inner-wrap">
+
+      <%= render "layouts/zurb_nav" %>
 
       <div class="row">
         <div class="large-12 columns">
-
-          <nav class="top-bar">
-            <ul class="title-area">
-              <!-- Title Area -->
-              <li class="name">
-                <h1>
-                  <a href="#">
-                    Top Bar Title
-                  </a>
-                </h1>
-              </li>
-              <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
-            </ul>
-
-            <section class="top-bar-section">
-              <!-- Right Nav Section -->
-              <ul class="right">
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                  <a href="#">Main Item 1</a>
-                  <ul class="dropdown">
-                    <li><label>Section Name</label></li>
-                    <li class="has-dropdown">
-                      <a href="#" class="">Has Dropdown, Level 1</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Dropdown Options</a></li>
-                        <li><a href="#">Dropdown Options</a></li>
-                        <li><a href="#">Level 2</a></li>
-                        <li><a href="#">Subdropdown Option</a></li>
-                        <li><a href="#">Subdropdown Option</a></li>
-                        <li><a href="#">Subdropdown Option</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><label>Section Name</label></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">See all &rarr;</a></li>
-                  </ul>
-                </li>
-                <li class="divider"></li>
-                <li><a href="#">Main Item 2</a></li>
-                <li class="divider"></li>
-                <li class="has-dropdown">
-                  <a href="#">Main Item 3</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li><a href="#">Dropdown Option</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">See all &rarr;</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </section>
-          </nav>
-          <!-- End Top Bar -->
-        </div>
-      </div>
-
-    <!-- End Navigation -->
-
-      <div class="row">
-
-  <!-- Side Bar -->
-
-        <div class="large-4 columns">
-
-          <img src="http://placehold.it/500x500&text=Code Fellows Logo">
-
-          <div class="hide-for-small panel">
-            <h3>Code Fellows</h3>
-            <h5 class="subheader">
-              Welcome to the store!  Thanks for showing your support
-              for your local developer school.
-            </h5>
-          </div>
-
-          <a href="#">
-          <div class="panel callout radius">
-            <h6>99&nbsp; items in your cart</h6>
-          </div>
-          </a>
-
-        </div>
-
-    <!-- End Side Bar -->
-
-
-
-
-
-          <%= yield %>
-
-
-
-
-
-
-    <!-- Managed By -->
           <div class="row">
-            <div class="large-12 columns">
-              <div class="panel">
-                <div class="row">
+            <!-- Side Bar -->
+            <div class="large-4 columns">
 
-                  <div class="large-2 small-6 columns">
-                    <img src="http://placehold.it/300x300&text=Site Owner">
+              <img src="http://placehold.it/500x500&text=Code Fellows Logo">
+
+              <div class="hide-for-small panel">
+                <h3>Code Fellows</h3>
+                <h5 class="subheader">
+                  Welcome to the store!  Thanks for showing your support
+                  for your local developer school.
+                </h5>
+              </div>
+
+              <a href="#">
+                <div class="panel callout radius">
+                  <h6>99&nbsp; items in your cart</h6>
+                </div>
+              </a>
+            </div>
+            <!-- End Side Bar -->
+
+
+            <%= yield %>
+
+
+            <!-- Managed By -->
+              <div class="row">
+                <div class="large-12 columns">
+                  <div class="panel">
+                    <div class="row">
+
+                    <div class="large-2 small-6 columns">
+                      <img src="http://placehold.it/300x300&text=Site Owner">
+                    </div>
+
+                    <div class="large-10 small-6 columns">
+                      <strong>This Site Is Managed By<hr/></strong>
+                      Chris C., Jerry T., and Mike T.
+                    </div>
+
                   </div>
-
-                  <div class="large-10 small-6 columns">
-                    <strong>This Site Is Managed By<hr/></strong>
-                    Chris C., Jerry T., and Mike T.
-                  </div>
-
                 </div>
               </div>
-            </div>
-
-    <!-- End Managed By -->
-
+            <!-- End Managed By -->
           </div>
-      </div>
+        </div>
 
 
     <!-- Footer -->
-
       <footer class="row">
         <div class="large-12 columns"><hr />
           <div class="row">
@@ -261,19 +87,20 @@
               </p>
             </div>
 
-<!--             <div class="large-6 columns">
+            <!--
+            <div class="large-6 columns">
               <ul class="inline-list right">
                 <li><a href="#">Link 1</a></li>
                 <li><a href="#">Link 2</a></li>
                 <li><a href="#">Link 3</a></li>
                 <li><a href="#">Link 4</a></li>
               </ul>
-            </div> -->
+            </div>
+              -->
 
           </div>
         </div>
       </footer>
-
     <!-- End Footer -->
 
     </div>
