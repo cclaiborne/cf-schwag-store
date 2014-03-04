@@ -19,12 +19,11 @@ gem 'factory_girl_rails'
 group :test do
   gem "minitest-rails-capybara"
   gem 'capybara-webkit'
+  gem 'miniskirt'
   gem 'turn'
   gem 'simplecov', :require => false
-  gem 'debugger', "1.6.5"
-  gem 'pry-debugger', github: 'nixme/pry-debugger'
-  gem 'pry-rescue'
 end
+  # gem 'debugger', "1.6.5"
 
 group :development, :test do
   gem 'sqlite3'
@@ -32,6 +31,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'meta_request', '0.2.1'
   gem 'pry-rails'
+  gem 'pry-debugger', github: 'nixme/pry-debugger'
+  gem 'pry-rescue'
 end
 
 group :production do
