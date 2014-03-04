@@ -1,2 +1,2 @@
-Factory.define :product, :class => Shoppe::Product do 
+Factory.define :product, :class => Shoppe::Product do
 end

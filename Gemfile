@@ -19,7 +19,6 @@ gem 'factory_girl_rails'
 group :test do
   gem "minitest-rails-capybara"
   gem 'capybara-webkit'
-  gem 'miniskirt'
   gem 'turn'
   gem 'simplecov', :require => false
 end
@@ -34,6 +33,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger', github: 'nixme/pry-debugger'
   gem 'pry-rescue'
+  gem 'miniskirt'
   gem 'mocha'
 end
 
