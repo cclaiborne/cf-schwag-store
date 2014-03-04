@@ -1,8 +1,18 @@
+require 'simplecov'
+SimpleCov.start 'rails'
+
 ENV["RAILS_ENV"] = "test"
 require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
 require "minitest/rails/capybara"
+require "capybara-webkit"
+require 'capybara/dsl'
+require 'devise'
+require "turn/autorun"
+
+Capybara.default_driver = :webkit
+
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
 # to the test group in the Gemfile and uncomment the following:
@@ -17,3 +27,6 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+Turn.config.format = :outline
+
