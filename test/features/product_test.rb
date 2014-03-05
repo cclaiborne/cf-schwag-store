@@ -7,10 +7,11 @@ feature "Product Show Feature" do
     p1.product_category_id = catalogue.id
     p1.save
     visit product_path(p1.permalink )
-    binding.pry
+    # binding.pry
     page.must_have_content p1.description 
-    # page.must_have_content p1.description 
+    page.must_have_content p1.price
+    page.must_have_content p1.sku
     page.wont_have_content "Turtles all the Way Down!"
-    save_and_open_page
+    # save_and_open_page
   end
 end
