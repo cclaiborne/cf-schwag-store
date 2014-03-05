@@ -6,7 +6,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Shoppe::Product.find_by_permalink(params[:permalink])
+<<<<<<< HEAD
     #binding.pry
+=======
+    # binding.pry
+>>>>>>> 1bb11d112c39ab375040d783e8b5e366a1428ecf
   end
 
   def buy
