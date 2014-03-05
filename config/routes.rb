@@ -3,15 +3,12 @@ CfSchwagStore::Application.routes.draw do
   #customer-facing products routes
   get 'products' => 'products#index'
   get 'product/:permalink' => 'products#show', :as => 'product'
-<<<<<<< HEAD
   post 'product/:permalink' => 'products#buy'
 
   #customer-facing basket (a.k.a. 'cart') routes
   get 'basket' => 'orders#show'
   delete 'basket' => 'orders#destroy'
 
-=======
->>>>>>> ebd099b1a45891e83454c1d421a4d32a0ba84d1f
   get "welcome/index"
   mount Shoppe::Engine => "/shoppe"
   root 'products#index'
