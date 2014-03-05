@@ -12,6 +12,7 @@ feature "Product Show Feature" do
     page.must_have_content p1.price
     page.must_have_content p1.sku
     page.wont_have_content "Turtles all the Way Down!"
+    #stuff
     # save_and_open_page
   end
 end
