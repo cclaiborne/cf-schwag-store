@@ -1,9 +1,12 @@
 require "test_helper"
 
-feature "CanSeeSkuNumber" do
-  scenario "the test is sound" do
-    #visit product_path(1)
-    page.must_have_content "SKU"
-
+feature "ProductShowFeature" do
+    scenario "CanSeeSkuNumber" do
+    catalogue = FactoryGirl.create(:category)
+    p1 = FactoryGirl.create(:product)
+    p1.product_category_id = catalogue.id
+    p1.save
+    visit product_path(p1.permalink)
+    page.must_have_content p1.sku
   end
 end
