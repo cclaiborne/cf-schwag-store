@@ -14,7 +14,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'minitest-rails'
-gem 'factory_girl_rails'
 
 
 group :test do

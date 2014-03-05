@@ -9,10 +9,10 @@ require "minitest/rails/capybara"
 require "capybara-webkit"
 require 'capybara/dsl'
 require 'mocha'
-require 'factories/products_factory'
 require "turn/autorun"
+require "factory_girl_rails"
 
-Capybara.default_driver = :webkit
+# Capybara.default_driver = :webkit
 
 
 # To add Capybara feature tests add `gem "minitest-rails-capybara"`
@@ -24,10 +24,12 @@ Capybara.default_driver = :webkit
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  fixtures :all
+  # fixtures :all
 
   # Add more helper methods to be used by all tests here...
 end
+
+
 
 Turn.config.format = :outline
 
