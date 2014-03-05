@@ -2,8 +2,8 @@ require "test_helper"
 
 feature "CanSeeSkuNumber" do
   scenario "the test is sound" do
-    visit root_path
+    visit product_path(1)
+    page.must_have_content "SKU"
 
-    page.wont_have_content "Goobye All!"
   end
 end
