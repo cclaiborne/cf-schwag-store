@@ -34,7 +34,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger', github: 'nixme/pry-debugger'
   gem 'pry-rescue'
-  gem 'miniskirt'
+  gem 'factory_girl_rails'
   gem 'mocha'
   gem 'html_routes', '~> 1.0' 
   gem 'launchy'

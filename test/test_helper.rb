@@ -9,8 +9,7 @@ require "minitest/rails/capybara"
 require "capybara-webkit"
 require 'capybara/dsl'
 require 'mocha'
-require 'miniskirt'
-require 'factories'
+require 'factories/products_factory'
 require "turn/autorun"
 
 Capybara.default_driver = :webkit
