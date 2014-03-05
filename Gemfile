@@ -36,6 +36,8 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'miniskirt'
   gem 'mocha'
+  gem 'html_routes', '~> 1.0' 
+  gem 'launchy'
 end
 
 group :production do

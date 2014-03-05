@@ -3,7 +3,7 @@ CfSchwagStore::Application.routes.draw do
   #customer-facing products routes
   get 'products' => 'products#index'
   get 'product/:permalink' => 'products#show', :as => 'product'
-
+  resources :products
   get "welcome/index"
   mount Shoppe::Engine => "/shoppe"
   root 'products#index'

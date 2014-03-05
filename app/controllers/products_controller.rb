@@ -5,6 +5,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Shoppe::Product.find_by_permalink(params[:permalink])
+    @product = Shoppe::Product.find(params[:id])
   end
 end

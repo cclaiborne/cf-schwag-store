@@ -2,13 +2,12 @@ require "test_helper"
 
 feature "ProductProperties" do
   scenario "Product properties are displayed on show page" do
-    p1 = Factory :product, short_description: "unmatched in quality",  name: 'pen', sku: 'xxx-123', description: "Realy amazing pen writes forever", weight: '1.5', price: '2.00', product_category_id: '1', stock_control: true, id: '1'
-    p2 = Factory :product,short_description: "unmatched in quality", name: 'pen-gold', sku: 'xxx-124', description: "Realy amazing pen writes sometimes", weight: '0.5', price: '3.00', product_category_id: '1', stock_control: true, id: '2'
-    p3 = Factory :product,short_description: "unmatched in quality",  name: 'pen-silver', sku: 'xxx-125', description: "Realy amazing pen writes awful", weight: '3.0', price: '5.00', product_category_id: '1', stock_control: true, id: '3'
-      
-    visit product_path(p1.sku)
+    p1 = Factory :product, id: "1", parent_id: '2', product_category_id: '1', name: "pen", sku: "xxx-123", permalink: "xxx-555", description: "Really amazing pen writes forever", short_description: "unmatched in quality", active: true, weight: '1.5', price: '2.00',  stock_control: true
 
-    page.must_have_content p1.sku
+    visit product_path(permalink: "#{p1.permalink}")
+    save_and_open_page
+    page.must_have_content p1.sku 
+    page.must_have_content p1.description 
     page.wont_have_content "Turtles all the Way Down!"
   end
 end
