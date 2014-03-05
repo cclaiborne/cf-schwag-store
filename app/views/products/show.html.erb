@@ -5,6 +5,7 @@
 <% end %>
 
 <p><%= @product.short_description %></p>
+<p><%= @product.sku %></p>
 <p>
   <b><%= number_to_currency @product.price %></b>
   <%= link_to "ADD TO CART", product_path(@product.permalink), :method => :post, class: "small button" %>
