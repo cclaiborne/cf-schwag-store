@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
       if has_order?
         @current_order
       else
-        order =
-        session[:order_id] =
+        order = Shoppe::Order.create(:ip_address => request.ip)
+        session[:order_id] = order.id
         order
       end
     end
@@ -20,7 +20,9 @@ class ApplicationController < ActionController::Base
   def has_order?
     !!(
       session[:order_id] &&
-      @current_order = Shoppe::Order.includes(:order_items => :ordered_items).find_by_id(session[:order_id])
+      #This line is from the baskets guide, but is questionable.
+      #@current_order = Shoppe::Order.includes(:order_items => :ordered_items).find_by_id(session[:order_id])
+      @current_order = Shoppe::Order.includes(:order_items).find_by_id(session[:order_id])
     )
   end
 
