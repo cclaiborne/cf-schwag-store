@@ -14,7 +14,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'minitest-rails'
-gem 'factory_girl_rails'
 
 
 group :test do
@@ -34,8 +33,10 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-debugger', github: 'nixme/pry-debugger'
   gem 'pry-rescue'
-  gem 'miniskirt'
+  gem 'factory_girl_rails'
   gem 'mocha'
+  gem 'html_routes', '~> 1.0' 
+  gem 'launchy'
 end
 
 group :production do
