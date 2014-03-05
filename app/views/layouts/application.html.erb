@@ -41,11 +41,18 @@
                 </h5>
               </div>
 
-              <a href="#">
-                <div class="panel callout radius">
-                  <h6>99&nbsp; items in your cart</h6>
-                </div>
-              </a>
+              <% if has_order? %>
+                <a href="#">
+                  <div class="panel callout radius">
+                    <h6>
+                      <%= pluralize current_order.total_items, 'item' %>
+                      ( <%# number_to_currency current_order.total_before_tax %> )
+                      <%= link_to "in your Cart", basket_path %>
+                    </h6>
+                  </div>
+                </a>
+              <% end %>
+
             </div>
             <!-- End Side Bar -->
 
