@@ -1,0 +1,9 @@
+one:
+  name: one
+  sku: 123
+  price: 12.3
+
+two:
+  name: two
+  sku: 345
+  price: 32.4
