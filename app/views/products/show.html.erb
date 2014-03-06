@@ -9,6 +9,7 @@
 <p>
   <b><%= number_to_currency @product.price %></b>
   <%= link_to "ADD TO CART", product_path(@product.permalink), :method => :post, class: "small button" %>
+  <%= link_to "CHECKOUT", checkout_path, class: "small button" %>
 </p>
 
 <hr>
