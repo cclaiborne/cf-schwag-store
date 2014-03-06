@@ -7,7 +7,6 @@ feature "CanAddProductToCart" do
     p1.product_category_id = catalogue.id
     p1.save
     visit product_path(p1.permalink)
-    #product name is displayed
-    click_button("addtocart")
+    click_on("ADD TO CART")
   end
 end
