@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.0'
 
 gem 'rails', '4.0.3'
 gem 'figaro'
@@ -35,7 +36,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'factory_girl_rails'
   gem 'mocha'
-  gem 'html_routes', '~> 1.0' 
+  gem 'html_routes', '~> 1.0'
   gem 'launchy'
 end
 
