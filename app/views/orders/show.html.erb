@@ -1,6 +1,6 @@
-<h2>Your basket</h2>
-<%= link_to "Checkout", "checkout", class: "small button" %>
+<h2>Order items in my carts:</h2>
 
 <%= render 'items', :order => current_order %>
 
-<p><%= link_to 'Empty Your Basket', basket_path, :method => :delete %></p>
+<%= link_to "Checkout", "checkout", class: "small button right" %>
+<%= link_to "Empty My Cart", basket_path, class: "small button right", method: :delete %>
