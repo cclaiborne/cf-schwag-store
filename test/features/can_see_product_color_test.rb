@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "CanSeeProductDisplayed" do
+feature "CanSeeProductColor" do
   scenario "the test is sound" do
     catalogue = FactoryGirl.create(:category)
     p1 = FactoryGirl.create(:product)
@@ -8,6 +8,6 @@ feature "CanSeeProductDisplayed" do
     p1.save
     visit product_path(p1.permalink )
     #product name is displayed
-    page.must_have_content p1.name
+    page.must_have_content p1.color
   end
 end
