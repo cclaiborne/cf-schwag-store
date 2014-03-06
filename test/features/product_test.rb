@@ -10,7 +10,7 @@ feature "Product Show Feature" do
     page.must_have_content p1.price
     page.must_have_content p1.sku
     page.wont_have_content "Turtles all the Way Down!"
-    # save_and_open_page #
+    # save_and_open_page ##
     click_link('ADD TO CART')
     page.must_have_content "Product has been added successfuly!"
   end
