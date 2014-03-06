@@ -12,6 +12,8 @@ feature "Product Show Feature" do
     page.must_have_content p1.sku
     page.wont_have_content "Turtles all the Way Down!"
     # save_and_open_page
-    click('ADD TO CART')
+    click_link('ADD TO CART')
+    click_link('Checkout')
+
   end
 end
