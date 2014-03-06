@@ -29,7 +29,16 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
+# Dry up building product
 
+# class Product 
+#   def new 
+#     catalogue = FactoryGirl.create(:category)
+#     p1 = FactoryGirl.create(:product, product_category_id: catalogue.id)
+#     p1.product_category_id = catalogue.id
+#     p1.save
+#   end
+# end   
 
 Turn.config.format = :outline
 
