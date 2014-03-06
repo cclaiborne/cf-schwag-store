@@ -35,7 +35,6 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'factory_girl_rails'
   gem 'mocha'
-  gem 'html_routes', '~> 1.0' 
   gem 'launchy'
 end
 
