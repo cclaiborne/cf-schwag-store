@@ -9,5 +9,6 @@ feature "CanSeeProductColor" do
     visit product_path(p1.permalink )
     #product name is displayed
     page.must_have_content p1.color
+    save_and_open_page
   end
 end
