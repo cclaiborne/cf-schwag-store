@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require shoppe/stripe/form_handler
 //= require jquery
 //= require jquery_ujs
+//= require shoppe/stripe/form_handler
 //= require foundation
 //= require turbolinks
 //= require_tree .
