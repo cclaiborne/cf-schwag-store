@@ -1,8 +1,6 @@
 <h2>Order items in my carts:</h2>
 
-<div class="large-8 columns">
-  <div class="row">
-    <%= render 'items', :order => current_order %>
-  </div>
+
+  <%= render 'items', :order => current_order %>
   <%= link_to "Checkout", "checkout", class: "small button right" %>
   <%= link_to "Empty My Cart", basket_path, class: "small button right", method: :delete %>
