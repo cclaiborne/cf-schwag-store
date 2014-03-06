@@ -25,13 +25,35 @@
 
       <%= render "layouts/zurb_nav" %>
 
+      <% if flash[:notice] %>
+        <%= content_tag :div, data: :notice, :id => "#{flash[:notice]}", :class => "alert-box info radius" do %>
+          <%= flash[:notice] %>
+          <a href="#" class="close">&times;</a>
+        <% end %>
+      <% end %>
+
+      <% if flash[:success] %>
+        <%= content_tag :div, data: :notice, :id => "#{flash[:success]}", :class => "alert-box success radius" do %>
+          <%= flash[:notice] %>
+          <a href="#" class="close">&times;</a>
+        <% end %>
+      <% end %>
+
+      <% if flash[:error] %>
+        <%= content_tag :div, data: :error, :id => "#{flash[:error]}", :class => "alert-box warning radius" do %>
+        <div data-alert class="alert-box success radius">
+          <%= flash[:error] %>
+          <a href="#" class="close">&times;</a>
+        <% end %>
+      <% end %>
+
       <div class="row">
         <div class="large-12 columns">
           <div class="row">
             <!-- Side Bar -->
             <div class="large-4 columns">
 
-              <img src="http://placehold.it/500x500&text=Code Fellows Logo">
+              <%= image_tag("code_fellows_logo.png") %>
 
               <div class="hide-for-small panel">
                 <h3>Code Fellows</h3>
@@ -42,15 +64,10 @@
               </div>
 
               <% if has_order? %>
-                <a href="/basket">
-                  <div class="button panel callout radius">
-                    <h6>
-                      <%= pluralize current_order.total_items, 'item' %>
-                      ( <%= number_to_currency current_order.total_before_tax %> )
-                      <%= link_to "in your Cart", basket_path %>
-                    </h6>
-                  </div>
-                </a>
+                <%= button_to basket_path, class: "button panel callout radius expand", method: :get do %>
+                  My Cart:&nbsp;&nbsp;
+                  <%= pluralize current_order.total_items, 'item' %> ( <%= number_to_currency current_order.total_before_tax %> )
+                <% end %>
               <% end %>
 
             </div>
