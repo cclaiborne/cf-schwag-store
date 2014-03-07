@@ -11,34 +11,35 @@ require 'capybara/dsl'
 require 'mocha'
 require "turn/autorun"
 require "factory_girl_rails"
+# Factory.find_definitions
 
 # Capybara.default_driver = :webkit
 
 
-# To add Capybara feature tests add `gem "minitest-rails-capybara"`
-# to the test group in the Gemfile and uncomment the following:
-# require "minitest/rails/capybara"
-
-# Uncomment for awesome colorful output
 # require "minitest/pride"
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  # fixtures :all
+  include FactoryGirl::Syntax::Methods 
+  
+  private
 
-  # Add more helper methods to be used by all tests here...
+  def create_order_with_products(options = {})
+  order = create(:order)
+  # create a product and a line
+  product1 = create(:yealink_t22p, :initial_stock => options[:stock] || 10)
+  item1 = order.order_items.create!(:quantity => options[:quantity] || 2, :ordered_item => product1)
+  # create another product and a link
+  product2 = create(:snom_870, :initial_stock => options[:stock] || 10)
+    item2 = order.order_items.create!(:quantity => options[:quantity] || 1, :ordered_item => product2)
+    
+    if options[:confirmed]
+      order.confirm!
+    end
+    
+    # return the order
+    order
+  end 
 end
-
-# Dry up building product
-
-# class Product 
-#   def new 
-#     catalogue = FactoryGirl.create(:category)
-#     p1 = FactoryGirl.create(:product, product_category_id: catalogue.id)
-#     p1.product_category_id = catalogue.id
-#     p1.save
-#   end
-# end   
 
 Turn.config.format = :outline
 
