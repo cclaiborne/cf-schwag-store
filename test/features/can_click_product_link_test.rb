@@ -1,13 +1,13 @@
 require "test_helper"
 
 feature "CanClickProductLink" do
-  scenario "the test is sound" do
+  scenario "User visits home page and clicks on a product link" do
     catalogue = FactoryGirl.create(:category)
     p1 = FactoryGirl.create(:product)
     p1.product_category_id = catalogue.id
     p1.save
     visit root_path
     click_on(p1.name)
-    #add statement to confirm user is on product page
+    page.must_have_content p1.sku
   end
 end
