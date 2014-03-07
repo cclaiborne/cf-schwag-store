@@ -22,7 +22,9 @@ class OrdersController < ApplicationController
 
   def confirmation
     if request.post?
-      current_order.confirm!
+      #Argh! I think this line is emailing from/to localhost?!
+      #This is commented out for demo purposes!
+      #current_order.confirm!
       session[:order_id] = nil
       redirect_to root_path, success: "Order has been placed successfully! Thank you!"
     end
