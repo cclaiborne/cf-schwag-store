@@ -7,12 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 #Clean tables before seed
+Shoppe::OrderItem.delete_all
+Shoppe::Order.delete_all
+Shoppe::ProductAttribute.delete_all
 Shoppe::Product.delete_all
 Shoppe::ProductCategory.delete_all
-Shoppe::ProductAttribute.delete_all
-Shoppe::ProductAttribute.delete_all
-Shoppe::Order.delete_all
-Shoppe::OrderItem.delete_all
 Shoppe::DeliveryService.delete_all
 Shoppe::TaxRate.delete_all
 
