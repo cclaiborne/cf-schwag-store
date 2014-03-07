@@ -1,12 +1,18 @@
-<h2>Make your payment</h2>
-<%= form_tag do %>
-  <dl>
-    <dt><%= label_tag 'card_number' %></dt>
-    <dd><%= text_field_tag 'card_number' %></dd>
-    <dt><%= label_tag 'expiry' %></dt>
-    <dd><%= text_field_tag 'expiry' %></dd>
-    <dt><%= label_tag 'security_code' %></dt>
-    <dd><%= text_field_tag 'security_code' %></dd>
-    <dd><%= submit_tag "Continue" %></dd>
-  </dl>
-<% end %>
+<%= shoppe_stripe_javascript %>
+<h2>Enter your credit card info:</h2>
+<div class="large-8 columns">
+  <div class="row">
+    <form action='pay' method='post' class='stripeForm'>
+      <input type='hidden' name='stripe_token' data-stripe='token' />
+      <label class="payment_label">Number</label>
+      <input type='text' data-stripe='number' placeholder='XXXX XXXX XXXX XXXX'>
+      <label class="payment_label">Exp. Mo.</label>
+      <input type='text' data-stripe='exp_month' placeholder='MM'>
+      <label class="payment_label">Exp. Yr.</label>
+      <input type='text' data-stripe='exp_year' placeholder='YYYY'>
+      <label class="payment_label">CVC (Security Code)</label>
+      <input type='text' data-stripe='cvc' placeholder='999'>
+      <input type="submit" value="Continue">
+    </form>
+  </div>
+

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.0'
 
 gem 'rails', '4.0.3'
 gem 'figaro'
@@ -29,6 +30,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'binding_of_caller', github: "banister/binding_of_caller" # This needs to go in before better_errors
   gem 'better_errors'
+
   gem 'meta_request', '0.2.1'
   gem 'pry-rails'
   gem 'pry-debugger', github: 'nixme/pry-debugger'
