@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def checkout
     @order = Shoppe::Order.find(current_order.id)
     if request.patch?
@@ -31,5 +32,9 @@ class OrdersController < ApplicationController
     current_order.destroy
     session[:order_id] = nil
     redirect_to root_path, success: "Cart emptied successfully."
+  end
+
+  def handle_unverified_request
+    forgery_protection_strategy.new(self).handle_unverified_request
   end
 end
