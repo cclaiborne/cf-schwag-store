@@ -1,7 +1,7 @@
 require "test_helper"
 
 feature "CanVisitStore" do
-  scenario "the test is sound" do
+  scenario "User visits home page" do
     visit root_path
   end
 end
