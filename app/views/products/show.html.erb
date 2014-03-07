@@ -5,15 +5,17 @@
 <% end %>
 
 <p><%= @product.short_description %></p>
-<p><%= @product.sku %></p>
 <p>
   <b><%= number_to_currency @product.price %></b>
   <%= link_to "ADD TO CART", product_path(@product.permalink), :method => :post, class: "small button" %>
   <%= link_to "CHECKOUT", checkout_path, class: "small button" %>
 </p>
 
-<hr>
-  <%= simple_format @product.description %>
-<hr>
+<div class="large-8 columns">
+  <div class="row">
+    <hr>
+      <%= simple_format @product.description %>
+    <hr>
+</div>
 
 <p><%= link_to "Back to list", root_path %></p>
