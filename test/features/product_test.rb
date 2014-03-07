@@ -5,7 +5,6 @@ feature "Product Show Feature" do
     catalogue = FactoryGirl.create(:category)
     p1 = FactoryGirl.create(:product, product_category_id: catalogue.id)
     p1.save
-    visit product_path(p1.permalink)
     page.must_have_content p1.description 
     page.must_have_content p1.price
     page.must_have_content p1.sku
