@@ -1,9 +1,9 @@
 <%= shoppe_stripe_javascript %>
-
 <h2>Enter your credit card info:</h2>
 <div class="large-8 columns">
   <div class="row">
     <form action='pay' method='post' class='stripeForm'>
+ <%= form_authenticity_token %>
       <input type='hidden' name='stripe_token' data-stripe='token' />
       <label class="payment_label">Number</label>
       <input type='text' data-stripe='number' placeholder='XXXX XXXX XXXX XXXX'>
