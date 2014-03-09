@@ -8,6 +8,6 @@ feature "CanClickProductLink" do
     p1.save
     visit root_path
     click_on(p1.name)
-    page.must_have_content p1.sku
+    page.must_have_content p1.name
   end
 end
