@@ -8,5 +8,6 @@ feature "CanAddProductToCart" do
     p1.save
     visit product_path(p1.permalink)
     click_on("ADD TO CART")
+    page.must_have_content "Product has been added successfuly!"
   end
 end

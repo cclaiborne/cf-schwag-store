@@ -5,9 +5,8 @@
     <% @products.each do |category, products| %>
       <% products.each do |product| %>
         <div class="large-4 small-6 columns">
-          <%#= image_tag("http://placehold.it/500x500&text=#{product.name}") %>
           <% if product.default_image %>
-            <%= image_tag product.default_image.path, :size => '192' %>
+            <%= image_tag product.default_image.path, :size => '192', alt: product.name %>
           <% else %>
             <%= image_tag("http://placehold.it/300x300&text=#{product.name}") %>
           <% end %>

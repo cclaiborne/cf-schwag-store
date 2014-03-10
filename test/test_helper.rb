@@ -6,7 +6,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "minitest/rails"
 require "minitest/rails/capybara"
-require "capybara-webkit"
+# require "capybara-webkit"
 require 'capybara/dsl'
 require 'mocha'
 require "turn/autorun"
@@ -18,7 +18,7 @@ require "factory_girl_rails"
 
 # require "minitest/pride"
 
-class ActiveSupport::TestCase
+class ActiveSupport::TestCase 
   include FactoryGirl::Syntax::Methods 
   
   private
