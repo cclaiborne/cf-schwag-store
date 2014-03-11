@@ -65,7 +65,7 @@
               </div>
 
               <% if current_order %>
-                <%= button_to basket_path, class: "button panel callout radius expand", method: :get do %>
+                <%= button_to basket_path, class: "button panel callout radius expand", id: "cart_btn", method: :get do %>
                   My Cart:&nbsp;&nbsp;
                   <%= pluralize current_order.total_items, 'item' %> ( <%= number_to_currency current_order.total_before_tax %> )
                 <% end %>

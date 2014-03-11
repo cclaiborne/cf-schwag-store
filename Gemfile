@@ -21,7 +21,8 @@ group :test do
   gem "minitest-rails-capybara"
   gem 'capybara-webkit'
   gem 'turn'
-  gem 'simplecov', :require => false
+  gem 'simplecov', '~> 0.7.1', :require => false
+  # gem 'simplecov-html', '~>0.7.1'
 end
   # gem 'debugger', "1.6.5"
 
