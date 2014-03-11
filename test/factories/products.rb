@@ -10,8 +10,9 @@ module Shoppe
       sku                 'jazz123'
       permalink           'jazzphone'
       short_description   'true blue jazz'
+      price               15.00
       ignore do
-        initial_stock nil
+        initial_stock 5
       end
       
       after(:create) do |product, ev|
