@@ -1,6 +1,6 @@
 require "test_helper"
 
-feature "Product Show Feature" do
+feature "Product Show Page" do
   scenario "Product properties are displayed on show page" do
     catalogue = FactoryGirl.create(:category)
     p1 = FactoryGirl.create(:product, product_category_id: catalogue.id)
@@ -8,10 +8,6 @@ feature "Product Show Feature" do
     visit product_path(p1.permalink)
     page.must_have_content p1.description 
     page.must_have_content p1.price
-    page.must_have_content p1.sku
-    page.wont_have_content "Turtles all the Way Down!"
-    click_link('ADD TO CART')
-    page.must_have_content "Product has been added successfuly!"
   end
   scenario "User clicks checkout button" do
     catalogue = FactoryGirl.create(:category)
@@ -41,11 +37,11 @@ feature "Product Show Feature" do
     p1 = FactoryGirl.create(:product, product_category_id: catalogue.id)
     p1.save
     visit product_path(p1.permalink)
-    page.must_have_content "Shop"
-    page.must_have_content "Foundations"
-    page.must_have_content "Bootcamps"
-    page.must_have_content  "Calendar"
-    page.must_have_content "Blog"
-    page.must_have_content  "Apply Now"
+    find_link('Shop').visible? 
+    find_link('Foundations').visible? 
+    find_link('Bootcamps').visible? 
+    find_link('Calendar').visible? 
+    find_link('Blog').visible? 
+    find_link('Apply Now').visible? 
   end
 end

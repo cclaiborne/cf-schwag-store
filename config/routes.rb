@@ -9,7 +9,6 @@ CfSchwagStore::Application.routes.draw do
   get 'basket' => 'orders#show'
   delete 'basket' => 'orders#destroy'
 
-  get "welcome/index"
   mount Shoppe::Engine => "/shoppe"
   root 'products#index'
 
