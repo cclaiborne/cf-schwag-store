@@ -34,7 +34,7 @@
       <% end %>
 
       <% if flash[:success] %>
-        <%= content_tag :div, data: :notice, :id => "#{flash[:success]}", :class => "alert-box success radius" do %>
+        <%= content_tag :div, data: :success, :id => "#{flash[:success]}", :class => "alert-box success radius" do %>
           <%= flash[:notice] %>
           <a href="#" class="close">&times;</a>
         <% end %>

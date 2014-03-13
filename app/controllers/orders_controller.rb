@@ -9,21 +9,39 @@ class OrdersController < ApplicationController
     end
   end
 
+
   def payment
     @order = current_order
+    @total_before_tax = @order.total_before_tax * 100
+
     if request.post?
-      if @order.accept_stripe_token(params[:stripe_token])
-        redirect_to checkout_confirmation_path
-      else
-        flash.now[:notice] = "Could not exchange Stripe token. Please try again."
+      Stripe.api_key = ENV["SECRET_KEY"]
+
+      # Get the credit card details submitted by the form
+      token = params[:stripeToken]
+      STDERR.puts "       **token: #{token}**"
+
+      # Create the charge on Stripe's servers - this will charge the user's card
+      begin
+        charge = Stripe::Charge.create(
+          :amount => 500,
+          :currency => "usd",
+          :card => token,
+          :description => "payinguser@example.com"
+        )
+      rescue Stripe::CardError => e
+        # The card has been declined
+        flash.now[:notice] = e
       end
+      STDERR.puts "        **charge: #{charge}**"
+      STDERR.puts "        **params: #{params}**"
+
+      redirect_to checkout_confirmation_path, success: "Your credit card details were saved!"
     end
   end
 
   def confirmation
     if request.post?
-      #Argh! I think this line is emailing from/to localhost?!
-      #This is commented out for demo purposes!
       current_order.confirm!
       session[:order_id] = nil
       redirect_to root_path, success: "Order has been placed successfully! Thank you!"
