@@ -9,12 +9,13 @@ gem 'shoppe', '~> 0.0.0'
 gem 'shoppe-stripe', :require => 'shoppe/stripe'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'minitest-rails'
+gem 'awesome_print'
 
 
 group :test do
@@ -22,16 +23,15 @@ group :test do
   gem 'capybara-webkit'
   gem 'turn'
   gem 'simplecov', '~> 0.7.1', :require => false
-  # gem 'simplecov-html', '~>0.7.1'
+  gem 'simplecov-html', '~>0.7.1'
 end
   # gem 'debugger', "1.6.5"
 
 group :development, :test do
-  gem 'awesome_print'
   gem 'sqlite3'
   gem 'binding_of_caller', github: "banister/binding_of_caller" # This needs to go in before better_errors
   gem 'better_errors'
-
+  gem 'stripe-ruby-mock', github: "jetsgit/stripe-ruby-mock"
   gem 'meta_request', '0.2.1'
   gem 'pry-rails'
   gem 'pry-debugger', github: 'nixme/pry-debugger'
@@ -39,6 +39,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'mocha'
   gem 'launchy'
+  # gem 'pry-awesome_print', github: 'steakknife/pry-awesome_print'
 end
 
 group :production do
