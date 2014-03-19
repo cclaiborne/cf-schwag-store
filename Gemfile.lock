@@ -133,6 +133,7 @@ GEM
     mocha (1.0.0)
       metaclass (~> 0.0.1)
     multi_json (1.9.0)
+    newrelic_rpm (3.7.3.204)
     nifty-attachments (1.0.0)
     nifty-dialog (1.0.1)
     nifty-key-value-store (1.0.0)
@@ -268,6 +269,7 @@ DEPENDENCIES
   minitest-rails
   minitest-rails-capybara
   mocha
+  newrelic_rpm
   pg
   pry-debugger!
   pry-rails
