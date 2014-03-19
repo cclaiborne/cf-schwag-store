@@ -13,7 +13,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-
+gem 'newrelic_rpm', '~> 3.7.3'
 gem 'minitest-rails'
 gem 'awesome_print'
 
