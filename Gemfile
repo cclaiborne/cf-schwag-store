@@ -2,39 +2,44 @@ source 'https://rubygems.org'
 ruby '2.1.0'
 
 gem 'rails', '4.0.3'
-
-gem 'coffee-rails', '~> 4.0.0'
 gem 'figaro'
-gem 'jbuilder', '~> 1.2'
-gem 'jquery-rails'
-gem 'minitest-rails'
-gem 'newrelic_rpm'
+gem 'zurb-foundation'
 gem 'sass-rails', '~> 4.0.0'
 gem 'shoppe', '~> 0.0.0'
 gem 'shoppe-stripe', :require => 'shoppe/stripe'
-gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
-gem 'zurb-foundation'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'therubyracer', platforms: :ruby
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder', '~> 1.2'
+
+gem 'minitest-rails'
+gem 'awesome_print'
+
 
 group :test do
+  gem "minitest-rails-capybara"
   gem 'capybara-webkit'
-  gem 'minitest-rails-capybara'
-  gem 'simplecov', '~> 0.7.1', :require => false
   gem 'turn'
+  gem 'simplecov', '~> 0.7.1', :require => false
+  gem 'simplecov-html', '~>0.7.1'
 end
+  # gem 'debugger', "1.6.5"
 
 group :development, :test do
-  gem 'awesome_print'
-  gem 'better_errors'
-  gem 'binding_of_caller', github: "banister/binding_of_caller" # This needs to go in before better_errors
-  gem 'factory_girl_rails'
-  gem 'launchy'
-  gem 'meta_request', '0.2.1'
-  gem 'mocha'
-  gem 'pry-debugger', github: 'nixme/pry-debugger'
-  gem 'pry-rails'
-  gem 'pry-rescue'
   gem 'sqlite3'
+  gem 'binding_of_caller', github: "banister/binding_of_caller" # This needs to go in before better_errors
+  gem 'better_errors'
+  gem 'stripe-ruby-mock', github: "jetsgit/stripe-ruby-mock"
+  gem 'meta_request', '0.2.1'
+  gem 'pry-rails'
+  gem 'pry-debugger', github: 'nixme/pry-debugger'
+  gem 'pry-rescue'
+  gem 'factory_girl_rails'
+  gem 'mocha'
+  gem 'launchy'
+  # gem 'pry-awesome_print', github: 'steakknife/pry-awesome_print'
 end
 
 group :production do
@@ -47,3 +52,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# gem 'bcrypt-ruby', '~> 3.1.2'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano', group: :development
+
+# Use debugger
+# gem 'debugger', group: [:development, :test]
